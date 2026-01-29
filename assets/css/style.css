@@ -1,0 +1,15 @@
+.container{
+    width: 75vw;
+    height: 95vh;
+    justify-items: center;
+    margin: auto;
+    background-color: rgb(174, 177, 219);
+}
+
+.desabilitar{
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+    background-color: #ccc;
+    color: #666;
+}

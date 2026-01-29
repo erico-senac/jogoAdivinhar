@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Adivinhação</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="msg">
+            <h1>Configurações</h1>
+        </div>
+        <div>
+            <label for="limite">Limite: </label>
+            <input type="text" id="limite" size="5" maxlength="4" onkeypress="return previnirletras(e)">
+            <label for="qtentativas">Quantidade de Tentativas</label>
+            <input type="text" id="qtentativas" size="2" maxlength="2">
+        </div>
+        <div class="msg">
+            <h1>Jogo de Adivinhar um Número</h1>
+            Adivinhe o número que eu pensei entre <span id="minimo"></span> e <span id="maximo"></span>
+        </div>
+        <div class="informacao">
+            Tentativa: <span id="tentativa">5</span>
+        </div>
+        <div class="chute">
+            <input type="text" id="chute">
+            <button type="submit" id="btnChute">Chute</button>
+        </div>
+        <div class="resultado" id="resultado">
+
+        </div>
+        
+        <div id="link">
+            
+        </div>
+    </div>
+</body>
+<script src="./assets/js/jogo.js"></script>
+<script> 
+function previnirletras(e){
+    if(isNaN(e.key)){
+      return false;
+    } else {
+       return true;
+    }
+}
+</script>
+</html>
