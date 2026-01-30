@@ -13,7 +13,7 @@
         </div>
         <div>
             <label for="limite">Limite: </label>
-            <input type="text" id="limite" size="5" maxlength="4" onkeypress="return previnirletras(e)">
+            <input type="text" id="limite" size="5" maxlength="4">
             <label for="qtentativas">Quantidade de Tentativas</label>
             <input type="text" id="qtentativas" size="2" maxlength="2">
         </div>
@@ -38,13 +38,4 @@
     </div>
 </body>
 <script src="./assets/js/jogo.js"></script>
-<script> 
-function previnirletras(e){
-    if(isNaN(e.key)){
-      return false;
-    } else {
-       return true;
-    }
-}
-</script>
 </html>
