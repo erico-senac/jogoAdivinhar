@@ -15,7 +15,9 @@ const link = document.querySelector('#link');
 const qTetativas = document.querySelector('#qtentativas');
 const limite = document.querySelector('#limite');
 const cChute = document.querySelector('.chute');
-const records = document.querySelector('#records')
+const records = document.querySelector('#records');
+const labelRecord = document.querySelector('#record');
+const nomeRecordista = document.querySelector('#inome');
 
 //intereções com a html
 spanMin.innerHTML = `<strong> ${minimo}</strong>`;
@@ -53,7 +55,9 @@ chute.addEventListener('keypress', (e) => {
 const verificaChute = () => {
   if (parseInt(chute.value) === numeroSecreto) {
     resultado.innerHTML = "Você acertou!";
+    labelRecord.innerHTML = `${1 + parseInt(qTetativas.value) - parseInt(contTentativa.textContent)}/${qTetativas.value}`
     desabilitar();
+    montaLista()
     btnTenteOutraVez("Reiniciar o Jogo");
   } else if (parseInt(chute.value) > numeroSecreto) {
     resultado.innerHTML = "Menor!";
@@ -106,36 +110,3 @@ chute.addEventListener('keydown', (event) => {
     verificaChute();
   }
 });
-
-const colocarRecordistas = () => {
-  
-  listaRecordistas = {
-                        recordistas:[
-                            {
-                                "nome" : "Francisco de Assis",
-                                "record" : 1500,
-                                "data" : "03/02/2026"
-                            },
-                            {
-                                "nome" : "Johnny Kanon",
-                                "record" : 2000,
-                                "data" : "02/02/2026"
-                            }
-                        ]
-                      };
-  console.log(listaRecordistas);
-  console.log(listaRecordistas.recordistas)
-  lista = listaRecordistas.recordistas;
-
-  lista.forEach(recordista => {
-    records.innerHTML += `
-      <tr>
-        <td>${recordista.nome}</td>
-        <td>${recordista.record}</td>
-        <td>${recordista.data}</td>
-      </tr>
-    `
-  });
-}
-
-colocarRecordistas();

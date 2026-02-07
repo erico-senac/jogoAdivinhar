@@ -13,3 +13,7 @@
     background-color: #ccc;
     color: #666;
 }
+
+.hide{
+    display: none;
+}
